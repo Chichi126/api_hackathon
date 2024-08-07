@@ -75,7 +75,7 @@ python extract_file.py
 
 Python Code: The complete Python code used for data extraction, transformation, and storage is available [here](my_venv/workings)!. This script handles the entire data pipeline process.
 
-DBeaver Screenshots: To provide visual insights into how the data is managed and queried in DBeaver, you can view the screenshots [here](SQL_Syntax)!. These screenshots demonstrate the interface
+DBeaver Screenshots: To provide visual insights into how the data is managed and queried in DBeaver, you can view the screenshots [here](SQL_Syntax)! These screenshots demonstrate the interface
 
 Terraform Configuration: The Terraform configurations used to set up the cloud infrastructure are available [here](my_venv/module)!. This includes the setup of S3 buckets, Redshift clusters, and any other required infrastructure components.
 
