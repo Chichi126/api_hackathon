@@ -1,7 +1,7 @@
-from datetime import timedelta, datetime
+from datetime import datetime, timedelta
 from airflow import DAG
 from airflow.operators.python_operator import PythonOperator
-from api_project.my_venv.airflow.dags.utils import extract_file, copy_to_s3
+from api_project.my_venv.airflow.dags.utils import copy_to_s3, extract_file
 
 default_args = {
     'owner': 'faker_project',
