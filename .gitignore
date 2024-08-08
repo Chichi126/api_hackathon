@@ -13,3 +13,8 @@ cloud_infras/.terraform.lock.hcl
 # Ignore Terraform variable files
 cloud_infras/terraform.tfvars
 cloud_infras/terraform.tfvars.json
+
+airflow_files/logs/*
+airflow_files/plugins/*
+
+airflow_files/dags/utils/*pycache*/*

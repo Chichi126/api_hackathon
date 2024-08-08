@@ -2,7 +2,11 @@ from datetime import datetime, timedelta
 
 from airflow import DAG
 from airflow.operators.python_operator import PythonOperator
-from api_project.my_venv.airflow.dags.utils import copy_to_s3, extract_file
+from utils.aws import aws_sesion
+from utils.main import copy_to_s3, extract_file
+
+boto3session = aws_sesion()
+
 
 default_args = {
     'owner': 'faker_project',
@@ -28,12 +32,15 @@ extract_task = PythonOperator(
     task_id="employees_dataset",
     dag=dag,
     python_callable=extract_file,
+    op_kwargs = {"url":"https://restcountries.com/v3.1/all"
+}
 )
-
 copy_task = PythonOperator(
-    task_id='customer_dataset',
+    task_id='send_to_s3',
     python_callable=copy_to_s3,
     dag=dag,
+    op_kwargs = {"boto_session":boto3session
+    }
 )
 
 extract_task >> copy_task

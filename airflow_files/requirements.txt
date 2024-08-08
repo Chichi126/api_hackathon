@@ -1,2 +1,4 @@
 pandas
 awswrangler==3.6.0
+requests
+boto3
