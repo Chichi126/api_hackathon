@@ -54,7 +54,7 @@ To get started with this project, you'll need to create the virtual environment 
 
 ```sh
 # Create a virtual environment
-python -m venv my_venv
+python -m venv my_ve
 
 # Activate the virtual environment
 # On macOS source my_venv/bin/activate
@@ -66,18 +66,13 @@ pip install pandas requests boto3 awswrangler
 
 ### Usage
 
-The main script, `extract_file.py`, handles the extraction, transformation, and storage of the data. You can run this script as follows:
-
-```sh
-python extract_file.py
-```
 ## Project Files and Screenshots
 
-Python Code: The complete Python code used for data extraction, transformation, and storage is available [here](my_venv/workings)!. This script handles the entire data pipeline process.
+Python Code: The complete Python code used for data extraction, transformation, and storage is available [here](airflow_files)! This script handles the entire data pipeline process.
 
 DBeaver Screenshots: To provide visual insights into how the data is managed and queried in DBeaver, you can view the screenshots [here](SQL_Syntax)! These screenshots demonstrate the interface
 
-Terraform Configuration: The Terraform configurations used to set up the cloud infrastructure are available [here](my_venv/module)!. This includes the setup of S3 buckets, Redshift clusters, and any other required infrastructure components.
+Terraform Configuration: The Terraform configurations used to set up the cloud infrastructure are available [here](cloud_infras)! This includes the setup of S3 buckets, Redshift clusters, and any other required infrastructure components.
 
 ### Conclusion
 
