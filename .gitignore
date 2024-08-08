@@ -1,1 +1,15 @@
 my_ve
+# Ignore Terraform state files
+cloud_infras/**/*.tfstate
+cloud_infras/**/*.tfstate.*
+
+# Ignore Terraform directories
+cloud_infras/.terraform/
+cloud_infras/.terraform/*
+
+# Ignore Terraform lock file
+cloud_infras/.terraform.lock.hcl
+
+# Ignore Terraform variable files
+cloud_infras/terraform.tfvars
+cloud_infras/terraform.tfvars.json
