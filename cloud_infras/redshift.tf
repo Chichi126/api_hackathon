@@ -23,7 +23,7 @@ resource "aws_iam_role" "test_redshift" {
 }
 
 resource "aws_iam_policy" "redshifpolicy" {
-  name        = "redshift_glue_S3_policy"
+  name        = "redshift_s3_glue_policy"
   path        = "/"
   description = "My test policy"
 
@@ -38,8 +38,8 @@ resource "aws_iam_policy" "redshifpolicy" {
           "s3: get*"
         ]
         Effect   = "Allow"
-        Resource = ["arn:aws:s3:::chi-apidataset",
-                    "arn:aws:s3:::chi-apidataset/api_countries_dataset.parquet/"]
+        Resource = ["arn:aws:s3:::apidataset",
+                    "arn:aws:s3:::apidataset/*"]
       },
       {
         Action = [
@@ -72,7 +72,7 @@ resource "aws_ssm_parameter" "api_redshift_pwd_params" {
 
 
 module "datawarehouse_cluster" {
-  source                  = "./dataware_house"
+  source                  = "./modules/datawarehouse"
   cluster_identifier      = "chi-de" 
   database_name           = "api_countries"
   iam_roles               = [aws_iam_role.test_redshift.arn]
