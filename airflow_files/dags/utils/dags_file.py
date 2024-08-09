@@ -9,7 +9,7 @@ boto3session = aws_sesion()
 
 
 default_args = {
-    'owner': 'faker_project',
+    'owner': 'api_project',
     'email': ['chinyere.nwigwe126@gmail.com'],
     'depends_on_past': False,
     'start_date': datetime(2024, 4, 15),
