@@ -20,7 +20,7 @@ default_args = {
 
 
 dag = DAG(
-    dag_id="faker",
+    dag_id="api_countries",
     default_args=default_args,
     description='creating an elt pipeline using python code and sql',
     schedule_interval="0 * * * *",
