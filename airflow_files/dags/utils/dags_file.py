@@ -32,15 +32,13 @@ extract_task = PythonOperator(
     task_id="employees_dataset",
     dag=dag,
     python_callable=extract_file,
-    op_kwargs = {"url":"https://restcountries.com/v3.1/all"
-}
+    op_kwargs={"url": "https://restcountries.com/v3.1/all"}
 )
 copy_task = PythonOperator(
     task_id='send_to_s3',
     python_callable=copy_to_s3,
     dag=dag,
-    op_kwargs = {"boto_session":boto3session
-    }
+    op_kwargs={"boto_session": boto3session}
 )
 
 extract_task >> copy_task
