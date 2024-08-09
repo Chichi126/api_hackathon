@@ -72,16 +72,13 @@ def extract_file(ti, url):
         country_list.append(countries)
     # return country_list  # Return the full list after the loop
     ti.xcom_push(key="country_list", value=country_list)
-# Extract the data and convert it to a DataFrame
-# country_list = extract_file(url="https://restcountries.com/v3.1/all")
-# df = pd.DataFrame(country_list)
-# print(df)
+
 
 
 # copying the extracted dataset to s3 bucket
 def copy_to_s3(ti, boto_session):
     bucket_name = "apidataset"
-    country_list = ti.xcom_pull(task_ids="employees_dataset",
+    country_list = ti.xcom_pull(task_ids="to_extract",
                                 key="country_list")
     df = pd.DataFrame(country_list)
     s3_path = f's3://{bucket_name}/api_countries_dataset.parquet'
@@ -96,7 +93,3 @@ def copy_to_s3(ti, boto_session):
         database="api_data",
         table="api_countries"
     )
-
-
-# copy_to_s3(df)
-# print("Parquet file uploaded successfully!")
