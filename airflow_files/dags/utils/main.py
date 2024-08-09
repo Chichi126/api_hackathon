@@ -74,7 +74,6 @@ def extract_file(ti, url):
     ti.xcom_push(key="country_list", value=country_list)
 
 
-
 # copying the extracted dataset to s3 bucket
 def copy_to_s3(ti, boto_session):
     bucket_name = "apidataset"
