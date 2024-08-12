@@ -2,7 +2,7 @@
 
 # api_project
 
-![](https://github.com/Chichi126/api_project/blob/cc0e7bb1efdc079762571f03fabc1fa5aba1509c/Copy%20of%20countries_api.jpg)
+![](Copy of countries_api.jpg)
 ## Project Overview
 
 
